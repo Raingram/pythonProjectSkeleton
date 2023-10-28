@@ -1,0 +1,38 @@
+# A larger example of this file can be found at: https://github.com/pypa/sampleproject/tree/main
+# This guide may be helpful: https://setuptools.pypa.io/en/latest/userguide/quickstart.html
+
+[project]
+name = "hello-world"    # You may find you need to use dashes here, where the actual code uses underscores.
+version = "0.0.1"
+authors = [
+  {name = "Original Developer", email = "author@example.com" }
+]
+maintainers = [
+  {name = "A. Great Maintainer", email = "maintainer@example.com" }
+]
+dependencies = [
+    "requests",
+    "flask",
+#   'importlib-metadata; python_version<"3.8"',
+    "sphinx"
+]
+
+[project.optional-dependencies]
+test = ["coverage"]
+#requires-python = ">=3.10"
+#readme = "README.md"
+#keywords = ["example", "hello_world"]
+
+[tool.setuptools.packages.find]
+where = ["src"]  # ["."] by default
+
+# The following would provide a command line executable called `run_hello`
+# which executes the function `main` from the file at project.module when invoked.
+#[project.scripts]  # Optional
+#run_hello = "project.module:main"
+
+[build-system]
+# These are the assumed default build requirements from pip:
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+requires = ["setuptools>=43.0.0", "wheel"]      # That minimum setuptools version may need increasing.
+build-backend = "setuptools.build_meta"
